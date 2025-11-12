@@ -18,3 +18,15 @@ puts "Adding 5 restaurants"
                   phone_number: Faker::PhoneNumber.phone_number )
 end
 puts "Added 5 restaurants"
+
+puts "Adding reviews"
+Restaurant.all.each do |r|
+  rand(1..3).times do
+    r.reviews << Review.create(
+      rating: rand(0..5),
+      content: Faker::Restaurant.review,
+      restaurant_id: r.id
+    )
+  end
+end
+puts "Added reviews"

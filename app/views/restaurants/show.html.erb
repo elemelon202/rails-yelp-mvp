@@ -8,4 +8,18 @@
     <%= link_to "Leave a review", new_restaurant_review_path(@restaurant), class: "btn btn-dark mt-3 p-2"%>
     <%= link_to "See reviews", restaurant_reviews_path(@restaurant), class: "btn btn-dark mt-3 p-2"%>
 <p class="display-6"><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+<div class="container m-3">
+  <% @restaurant.reviews.each do |r| %>
+  <div class="card-product">
+    <div class="card-product-infos mt-2">
+      <h2><%= r.rating %> stars</h2>
+      <p><%= r.content %></p>
+    </div>
+  </div>
+  <% end %>
+  <%= link_to "Back to all restaurants", restaurants_path, class: "btn btn-dark mt-2" %>
+</div>
+
+
 </div>
