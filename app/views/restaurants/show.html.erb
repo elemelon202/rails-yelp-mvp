@@ -1,0 +1,11 @@
+<div class="container mt-3">
+  <%= link_to "Back", restaurants_path, class: "btn btn-light mb-1 p-2"%>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= asset_path("#{@restaurant.category}.jpg") %>');">
+  <div class="container">
+    <h1 class="restaurant-name"><%= @restaurant.name %></h1>
+  </div>
+  </div>
+    <%= link_to "Leave a review", new_restaurant_review_path(@restaurant), class: "btn btn-dark mt-3 p-2"%>
+    <%= link_to "See reviews", restaurant_reviews_path(@restaurant), class: "btn btn-dark mt-3 p-2"%>
+<p class="display-6"><%= @restaurant.address %></p>
+</div>

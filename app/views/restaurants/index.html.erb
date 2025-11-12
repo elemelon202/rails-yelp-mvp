@@ -1,0 +1,16 @@
+<div class="container mt-3">
+  <nav class="navbar mb-2" style="background-color: #e3f2fd;" data-bs-theme="light"" data-bs-theme="dark">
+  <h1>Restaurants in your area</h1>
+  <%= link_to "Add a restaurant", new_restaurant_path, class: "btn btn-dark"%>
+
+</nav>
+  <div class="cards">
+    <% @restaurants.each do |r| %>
+    <%= link_to restaurant_path(r), class: "text-decoration-none" do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path("#{r.category}.jpg") %>')">
+      <%= r.name %>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
